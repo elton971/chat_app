@@ -1,0 +1,7 @@
+build
+node_modules
+/JSTimers.js
+.firebase
+.expo
+.expo-shared
+.vscode
