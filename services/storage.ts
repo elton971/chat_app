@@ -1,10 +1,7 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { FavoriteProps } from '../constants/types';
 
-interface FavoriteProps {
-  owner_username: string;
-  slug: string;
-  id: string;
-}
+
 
 export const saveFavorite = async (owner_username: string, slug: string, id: string) => {
   try {
@@ -24,7 +21,7 @@ export const saveFavorite = async (owner_username: string, slug: string, id: str
 export const getFavorites = async () => {
   try {
     const favoritesString = await AsyncStorage.getItem('favorites');
-    const favoritesArray = favoritesString ? JSON.parse(favoritesString) : [];
+    const favoritesArray: FavoriteProps[] = favoritesString ? JSON.parse(favoritesString) : [];
     return favoritesArray;
   } catch (error) {
     console.error(error);

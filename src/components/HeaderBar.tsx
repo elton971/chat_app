@@ -1,17 +1,11 @@
-import { Appbar, Button, Drawer } from 'react-native-paper';
+import { Appbar, Button } from 'react-native-paper';
 import { View, Text }             from 'react-native';
-import { Avatar }         from 'react-native-paper';
 import * as React         from 'react';
-import { useReducer }   from "react";
-import { reducerHome }  from "../../store/reducer/reducer";
-import { initialState } from "../../store/state/state";
+import { HeaderProps } from '../../constants/types';
 
-interface HeaderBarProps {
-  name: string;
-}
-export const HeaderBar = () => {
-  const [state] = useReducer(reducerHome, initialState);
-  const { header,user_data } = state;
+
+
+export const HeaderBar = ({title}:HeaderProps) => {
   return (
     <View>
       <Appbar.Header
@@ -22,7 +16,7 @@ export const HeaderBar = () => {
         }}
       >
         <View>
-          <Text style={{ fontSize: 25, fontWeight: 'bold' }}>{header}</Text>
+          <Text style={{ fontSize: 25, fontWeight: 'bold' }}>{title}</Text>
         </View>
         <View
           style={{

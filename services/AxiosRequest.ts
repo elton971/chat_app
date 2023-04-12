@@ -24,3 +24,14 @@ export const get_content_user = async (page: number, strategy = 'new', user: str
     console.error(error);
   }
 };
+
+export const get_content_slug = async (slug:string, user: string) => {
+  try {
+    const response = await axios.get(
+      BASE_URL + `/contents/${user}/${slug}`
+    );
+    return response.data;
+  } catch (error) {
+    console.error(error);
+  }
+};

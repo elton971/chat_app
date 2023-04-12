@@ -21,7 +21,7 @@ interface APIErrorProps {
   message: string;
   name: string;
   status_code: number;
-};
+}
 
 interface User {
   id: string;
@@ -35,6 +35,13 @@ interface User {
   updated_at: string;
 }
 
+interface FavoriteProps {
+  owner_username: string;
+  slug: string;
+  id: string;
+}
 
-
-export { ContentProps, APIErrorProps,User };
+interface HeaderProps {
+  title: string;
+}
+export { ContentProps, APIErrorProps, User, FavoriteProps,HeaderProps };

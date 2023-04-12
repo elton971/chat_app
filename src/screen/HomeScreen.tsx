@@ -57,7 +57,7 @@ export const HomeScreen = () => {
         flex: 1,
         backgroundColor: '#fff',
       }}>
-      <HeaderBar />
+      <HeaderBar title='Home' />
       <SafeAreaView
         style={{
           flex: 1,
@@ -103,9 +103,9 @@ export const HomeScreen = () => {
             {loading ? (
               <ActivityIndicator size="large" color="#0000ff" />
             ) : (
-              <View style={{ padding: 15 }}>
+              <View style={{ paddingHorizontal: 15 }}>
                 {content[0]?.id ? (
-                  content?.map((item: ContentProps) => <CardContent item={item} key={item.id} />)
+                  content?.map((item: ContentProps,index:number) => <CardContent item={item} key={index} />)
                 ) : (
                   <View>
                     <Text>{error?.message}</Text>

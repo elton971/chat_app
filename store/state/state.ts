@@ -19,7 +19,7 @@ export const initialState: StateHome = {
   strategy: 'new',
   page: 1,
   expanded: false,
-  header:'Home',
+  header:'',
   user_data: null,
   loading_more:false
 };
